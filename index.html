@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escaperoom</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #2b2b2b;
+    }
+
+    .screen {
+      width: 2000px;
+      height: 1100px;
+      background: #45a5ff;
+      border: 16px solid #111;
+      border-radius: 25px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    }
+    
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    .main-btn {
+      height: 260px;
+      border: none;
+      border-radius: 20px;
+      background: #00b618;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .main-btn:hover {
+      background: #009714;
+      transform: scale(1.04);
+    }
+
+    .bottom-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+
+      background: #000;
+      padding: 22px 30px;
+      border-radius: 16px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.05),
+                  0 6px 18px rgba(0,0,0,0.5);
+
+      border: 2px solid #111;
+    }
+
+    .color-btn {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: green;
+      transition: transform 0.2s;
+    }
+
+    .color-btn:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen">
+
+    <div class="button-container">
+
+      <button class="main-btn"
+        onclick="window.open('D:\projects\escaperoom test\oefening1.html', '_blank')">
+        Fysica
+      </button>
+
+      <button class="main-btn"
+        onclick="window.open('oefeningen/oef2.html', '_blank')">
+        Biologie
+      </button>
+
+      <button class="main-btn"
+        onclick="window.open('oefeningen/oef3.html', '_blank')">
+        Wiskunde
+      </button>
+
+      <button class="main-btn"
+        onclick="window.open('oefeningen/oef4.html', '_blank')">
+        Chemie
+      </button>
+
+    </div>
+
+    <div class="bottom-buttons">
+      <button class="color-btn"></button>
+      <button class="color-btn"></button>
+      <button class="color-btn"></button>
+      <button class="color-btn"></button>
+    </div>
+
+  </div>
+
+  <script>
+    const colors = ["green", "red", "blue","yellow","purple","pink","cyan"];
+
+    document.querySelectorAll(".color-btn").forEach(btn => {
+      let index = 0;
+
+      btn.addEventListener("click", () => {
+        index = (index + 1) % colors.length;
+        btn.style.background = colors[index];
+      });
+    });
+  </script>
+
+</body>
+</html>
