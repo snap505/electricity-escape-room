@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fysica escaperoom</title>
@@ -16,129 +17,85 @@
     <div class="components">
 
       <div class="component-box">
-        <div class="component resistor">weerstand</div>
+        <div class="component resistor" draggable="true" data-type="resistor"> Weerstand  </div>
       </div>
 
       <div class="component-box">
-        <div class="component lamp">Lamp</div>
+        <div class="component lamp" draggable="true" data-type="lamp"> Lamp </div>
       </div>
 
       <div class="component-box">
-        <div class="component volt">V</div>
+        <div class="component volt" draggable="true" data-type="volt">V</div>
       </div>
 
       <div class="component-box">
-        <div class="component amp">A</div>
+        <div class="component amp" draggable="true" data-type="ampere">A</div>
       </div>
 
       <div class="component-box">
-        <div class="component battery">Batterij</div>
+        <div class="component battery" draggable="true" data-type="batterij">Batterij</div>
       </div>
 
     </div>
 
-    <!-- EXERCISE -->
-    <div class="exercise-area">
-
-      <!-- TOP MAIN WIRE -->
-      <div class="wire horizontal"
-        style="top:50px; left:420px; width:900px;">
+   <!-- EXERCISE -->
+    <div class="exercise-wrapper">
+      <div class="exercise-area">
+        <!-- TOP MAIN WIRE -->
+        <div class="wire horizontal" style="top:50px; left:420px; width:900px;"></div>
+        
+        <!-- LEFT MAIN -->
+        <div class="wire vertical" style="top:50px; left:420px; height:280px;"></div>
+        
+        <!-- RIGHT MAIN -->
+        <div class="wire vertical" style="top:50px; left:1320px; height:280px;"></div>
+        
+        <!-- MIDDLE -->
+        <div class="wire horizontal" style="top:330px; left:420px; width:230px;"></div>
+        
+        <div class="wire horizontal" style="top:330px; left:860px; width:465px;"></div>
+        
+        <!-- LEFT OUTSIDE -->
+        <div class="wire horizontal" style="top:180px; left:180px; width:245px;"></div>
+        
+        <div class="wire vertical" style="top:180px; left:180px; height:300px;"></div>
+        
+        <!-- RIGHT OUTSIDE -->
+        <div class="wire horizontal" style="top:180px; left:1320px; width:225px;"></div>
+        
+        <div class="wire vertical" style="top:180px; left:1540px; height:305px;"></div>
+        
+        <!-- BOTTOM -->
+        <div class="wire horizontal" style="top:480px; left:180px; width:1360px;"></div>
+        
+        <!-- SMALL INNER CIRCUIT -->
+        <div class="wire vertical" style="top:200px; left:650px; height:220px;"></div>
+        
+        <div class="wire vertical" style="top:200px; left:860px; height:220px;"></div>
+        
+        <div class="wire horizontal" style="top:200px; left:650px; width:210px;"></div>
+        
+        <div class="wire horizontal" style="top:420px; left:650px; width:215px;"></div>
+        
+        <!-- DROP ZONES -->
+        <div class="drop" id="drop-top-left" data-accept="resistor" style="top:10px; left:500px; width:200px; height:80px;"></div>
+        
+        <div class="drop" id="drop-top-right" data-accept="resistor" style="top:10px; left:1020px; width:200px; height:80px;"></div>
+        
+        <div class="drop" id="drop-center" data-accept="empty" style="top:155px; left:690px; width:140px; height:80px;"></div>
+        
+        <div class="drop" id="drop-bottom-center" data-accept="empty" style="top:390px; left:690px; width:140px; height:80px;"></div>
+        
+        <div class="drop" id="drop-bottom-long" data-accept="batterij" style="top:440px; left:900px; width:280px; height:80px;"></div>
+        
+        <div class="drop" id="drop-right" data-accept="lamp" style="top:320px; left:1480px; width:130px; height:80px;"></div>
       </div>
-
-      <!-- LEFT MAIN -->
-      <div class="wire vertical"
-        style="top:50px; left:420px; height:280px;">
-      </div>
-
-      <!-- RIGHT MAIN -->
-      <div class="wire vertical"
-        style="top:50px; left:1320px; height:280px;">
-      </div>
-
-      <!-- MIDDLE -->
-      <div class="wire horizontal"
-        style="top:330px; left:420px; width:230px;">
-      </div>
-
-      <div class="wire horizontal"
-        style="top:330px; left:860px; width:465px;">
-      </div>
-
-      <!-- LEFT OUTSIDE -->
-      <div class="wire horizontal"
-        style="top:180px; left:180px; width:245px;">
-      </div>
-
-      <div class="wire vertical"
-        style="top:180px; left:180px; height:300px;">
-      </div>
-
-      <!-- RIGHT OUTSIDE -->
-      <div class="wire horizontal"
-        style="top:180px; left:1320px; width:225px;">
-      </div>
-
-      <div class="wire vertical"
-        style="top:180px; left:1540px; height:305px;">
-      </div>
-
-      <!-- BOTTOM -->
-      <div class="wire horizontal"
-        style="top:480px; left:180px; width:1360px;">
-      </div>
-
-      <!-- SMALL INNER CIRCUIT -->
-      <div class="wire vertical"
-        style="top:200px; left:650px; height:220px;">
-      </div>
-
-      <div class="wire vertical"
-        style="top:200px; left:860px; height:220px;">
-      </div>
-
-      <div class="wire horizontal"
-        style="top:200px; left:650px; width:210px;">
-      </div>
-
-      <div class="wire horizontal"
-        style="top:420px; left:650px; width:215px;">
-      </div>
-
-      <!-- PINK BOXES -->
-
-      <!-- TOP LEFT -->
-      <div class="drop"
-        style="top:10px; left:500px; width:200px; height:80px;">
-      </div>
-
-      <!-- TOP RIGHT -->
-      <div class="drop"
-        style="top:10px; left:1020px; width:200px; height:80px;">
-      </div>
-
-      <!-- CENTER -->
-      <div class="drop"
-        style="top:155px; left:690px; width:140px; height:80px;">
-      </div>
-
-      <!-- BOTTOM CENTER -->
-      <div class="drop"
-        style="top:390px; left:690px; width:140px; height:80px;">
-      </div>
-
-      <!-- BOTTOM LONG -->
-      <div class="drop"
-        style="top:440px; left:900px; width:280px; height:80px;">
-      </div>
-
-      <!-- RIGHT -->
-      <div class="drop"
-        style="top:320px; left:1480px; width:130px; height:80px;">
-      </div>
-
     </div>
 
   </div>
+
 <script src="../script.js"></script>
+
 </body>
+
 </html>
