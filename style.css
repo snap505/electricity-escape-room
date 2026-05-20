@@ -29,7 +29,6 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 60px;
 }
 
 .subtitle {
@@ -92,4 +91,172 @@ h1 {
 
 .color-btn:hover {
     transform: scale(1.2);
+}
+
+/* =========================
+   PHYSICS PAGE (SCOPED)
+========================= */
+
+/* MAIN SCREEN */
+.fysica-page .screen{
+  width:90vw;
+  height:90vh;
+  position: relative;
+  background:#45a5ff;
+  border:16px solid #111;
+  border-radius:25px;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  box-shadow:0 0 40px rgba(0,0,0,0.7);
+}
+
+/* TITLE */
+.fysica-page h1{
+  text-align:center;
+  font-size: clamp(40px, 4vw, 90px);
+  font-weight:normal;
+  color:black;
+}
+
+/* COMPONENT BAR */
+.fysica-page .components{
+  background:#293772;
+  height:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  padding:20px;
+}
+
+.fysica-page .component-box{
+  width:190px;
+  height:170px;
+  background:#88308d;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* COMPONENT BASE */
+.fysica-page .component{
+  background:#37916f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:black;
+  cursor: grab;
+  user-select: none;
+  text-align: center;
+}
+
+.fysica-page .component:active{
+  cursor: grabbing;
+}
+
+/* SIZE VARIANTS */
+.fysica-page .resistor,
+.fysica-page .battery{
+  width:160px;
+  height:65px;
+  font-size:30px;
+}
+
+.fysica-page .lamp{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  font-size:30px;
+}
+
+.fysica-page .volt,
+.fysica-page .amp{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  font-size:50px;
+}
+
+/* THIS is your “game canvas” */
+.fysica-page .exercise-area {
+  width: 1600px;
+  height: 700px;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(var(--scale));
+
+  background: #45a5ff;
+}
+
+/* WIRES */
+.fysica-page .wire{
+  position:absolute;
+  background:white;
+}
+
+.fysica-page .horizontal{
+  height:5px;
+}
+
+.fysica-page .vertical{
+  width:5px;
+}
+
+/* DROP ZONES */
+.fysica-page .drop{
+  position:absolute;
+  background:#ea7b9a;
+  border:2px dashed rgba(0,0,0,0.4);
+  transition: background 0.2s, transform 0.2s;
+  user-select:none;
+}
+
+/* FEEDBACK STATES */
+.fysica-page .drop.correct{
+  background:#4caf50;
+}
+
+.fysica-page .drop.wrong{
+  background:#e53935;
+}
+
+/* PLACED COMPONENT */
+.fysica-page .component.placed{
+  opacity:0.6;
+}
+
+/* GLOBAL SAFETY */
+.fysica-page .component,
+.fysica-page .drop{
+  user-select:none;
+}
+
+.fysica-page .exercise-wrapper {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.dragging-clone {
+  opacity: 0.6;
+  transform: scale(1.1);
+  z-index: 9999;
+}
+
+.fysica-page .check-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  background-color: #2a94f7;
+  border: none;
 }
