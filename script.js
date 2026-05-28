@@ -41,7 +41,14 @@ const displayNames = {
 
 document.addEventListener("DOMContentLoaded", () => {
   initDrag();
-  createCheckButton();
+
+  if (document.body.classList.contains("fysica-page")) {
+    createCheckButton();
+  }
+
+  if (document.body.classList.contains("chemie-page")) {
+    createChemistryButton();
+  }
 });
 
 function initDrag() {
@@ -143,4 +150,55 @@ function checkAnswers() {
       }, 400);
     }
   });
+}
+
+function createChemistryButton() {
+  const btn = document.createElement("button");
+
+  btn.innerText = "Verbeter";
+  btn.classList.add("check-btn");
+
+  document.querySelector(".chemie-page .screen").appendChild(btn);
+
+  btn.addEventListener("click", checkChemistry);
+}
+
+function checkChemistry() {
+  const activeCard = document.querySelector(".chemie-page .exercise-card.active");
+  if (!activeCard) return;
+
+  const input = activeCard.querySelector("input");
+  const correct = activeCard.dataset.answer;
+
+  const value = input.value.trim();
+
+  if (value === correct) {
+    activeCard.style.border = "3px solid #39ff14";
+    activeCard.style.boxShadow = "0 0 20px #39ff14";
+
+    setTimeout(() => {
+      goToNextChemistry(activeCard);
+    }, 600);
+
+  } else {
+    input.style.border = "2px solid red";
+
+    setTimeout(() => {
+      input.style.border = "none";
+    }, 500);
+  }
+}
+
+function goToNextChemistry(currentCard) {
+  const cards = Array.from(document.querySelectorAll(".chemie-page .exercise-card"));
+  const index = cards.indexOf(currentCard);
+
+  currentCard.classList.remove("active");
+
+  const next = cards[index + 1];
+  if (next) {
+    next.classList.add("active");
+  } else {
+    alert("Alle oefeningen voltooid!");
+  }
 }
