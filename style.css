@@ -261,269 +261,6 @@ h1 {
   border: none;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #2b2b2b;
-}
-
-.screen {
-    width: 90vw;
-    height: 90vh;
-    background: #45a5ff;
-    border: 16px solid #111;
-    border-radius: 25px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 0 40px rgba(0,0,0,0.7);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    text-align: center;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.button-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    flex-grow: 1;
-    align-items: center;
-}
-
-.main-btn {
-    height: 40vh;
-    width: 100%;
-    font-size: clamp(18px, 2vw, 32px);
-    border: none;
-    border-radius: 20px;
-    background: #00b618;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.main-btn:hover {
-    background: #009714;
-    transform: scale(1.04);
-}
-
-.bottom-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 25px;
-
-    background: #000;
-    padding: 22px 30px;
-    border-radius: 16px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: inset 0 0 18px rgba(255,255,255,0.05),
-                0 6px 18px rgba(0,0,0,0.5);
-    border: 2px solid #111;
-}
-
-.color-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    background: green;
-    transition: transform 0.2s;
-}
-
-.color-btn:hover {
-    transform: scale(1.2);
-}
-
-/* =========================
-   PHYSICS PAGE (SCOPED)
-========================= */
-
-/* MAIN SCREEN */
-.fysica-page .screen{
-  width:90vw;
-  height:90vh;
-  position: relative;
-  background:#45a5ff;
-  border:16px solid #111;
-  border-radius:25px;
-  padding:40px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  box-shadow:0 0 40px rgba(0,0,0,0.7);
-}
-
-/* TITLE */
-.fysica-page h1{
-  text-align:center;
-  font-size: clamp(40px, 4vw, 90px);
-  font-weight:normal;
-  color:black;
-}
-
-/* COMPONENT BAR */
-.fysica-page .components{
-  background:#293772;
-  height:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:40px;
-  padding:20px;
-}
-
-.fysica-page .component-box{
-  width:190px;
-  height:120px;
-  background:#88308d;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-/* COMPONENT BASE */
-.fysica-page .component{
-  background:#37916f;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:black;
-  cursor: grab;
-  user-select: none;
-  text-align: center;
-}
-
-.fysica-page .component:active{
-  cursor: grabbing;
-}
-
-/* SIZE VARIANTS */
-.fysica-page .resistor,
-.fysica-page .battery{
-  width:160px;
-  height:65px;
-  font-size:30px;
-}
-
-.fysica-page .lamp{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  font-size:30px;
-}
-
-.fysica-page .volt,
-.fysica-page .amp{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  font-size:50px;
-}
-
-/* THIS is your “game canvas” */
-.fysica-page .exercise-area {
-  width: 1600px;
-  height: 700px;
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform-origin: center center;
-  transform: translate(-50%, -50%) scale(var(--scale));
-
-  background: #45a5ff;
-}
-
-/* WIRES */
-.fysica-page .wire{
-  position:absolute;
-  background:white;
-}
-
-.fysica-page .horizontal{
-  height:5px;
-}
-
-.fysica-page .vertical{
-  width:5px;
-}
-
-/* DROP ZONES */
-.fysica-page .drop{
-  position:absolute;
-  background:#ea7b9a;
-  border:2px dashed rgba(0,0,0,0.4);
-  transition: background 0.2s, transform 0.2s;
-  user-select:none;
-}
-
-/* FEEDBACK STATES */
-.fysica-page .drop.correct{
-  background:#4caf50;
-}
-
-.fysica-page .drop.wrong{
-  background:#e53935;
-}
-
-/* PLACED COMPONENT */
-.fysica-page .component.placed{
-  opacity:0.6;
-}
-
-/* GLOBAL SAFETY */
-.fysica-page .component,
-.fysica-page .drop{
-  user-select:none;
-}
-
-.fysica-page .exercise-wrapper {
-  flex-grow: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-.dragging-clone {
-  opacity: 0.6;
-  transform: scale(1.1);
-  z-index: 9999;
-}
-
-.fysica-page .check-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px 25px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 999;
-  background-color: #2a94f7;
-  border: none;
-}
-
 /* =========================
    CHEMISTRY PAGE
 ========================= */
@@ -535,90 +272,84 @@ h1 {
     border: 16px solid #111;
     border-radius: 25px;
     padding: 40px;
-
     display: flex;
     flex-direction: column;
-    gap: 25px;
-
+    gap: 30px;
     box-shadow: 0 0 40px rgba(0,0,0,0.7);
     overflow: hidden;
 }
 
-/* TITLE */
 .chemie-page h1{
     text-align: center;
     font-size: clamp(40px, 4vw, 80px);
     color: black;
-    font-weight: normal;
 }
 
-/* CONTAINER HOLDING ALL EXERCISES */
+/* HOLDER FOR ALL EXERCISES */
 .chemie-page .exercise-container{
     flex: 1;
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
 }
 
+/* each box must NOT stretch full width */
 /* EACH EXERCISE CARD */
 .chemie-page .exercise-card{
-    flex: 1;
-    min-width: 0;
+    width: 100%;
+    max-width: 700px;
 
     background: #293772;
     border-radius: 20px;
-    padding: 20px;
+    padding: 25px;
 
     color: white;
 
-    display: flex;
+    display: none;           /* hidden by default */
     flex-direction: column;
     gap: 15px;
-
-    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
 
-/* CARD TITLE */
-.chemie-page .exercise-card h2{
-    text-align: center;
-    font-size: 32px;
-}
-
-/* SECTION BLOCKS */
-.chemie-page .section{
+/* ONLY ACTIVE ONE SHOWS */
+.chemie-page .exercise-card.active{
     display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
-/* SUBHEADERS */
-.chemie-page .section h3{
-    font-size: 22px;
-    text-transform: lowercase;
+/* TITLES */
+.chemie-page .exercise-box h2{
+    text-align: center;
+    font-size: 36px;
 }
 
 /* TEXT */
-.chemie-page .section p{
-    font-size: 20px;
+.chemie-page .exercise-box p{
+    font-size: 24px;
 }
 
 /* INPUT */
 .chemie-page input{
     width: 100%;
-    padding: 12px;
-    font-size: 18px;
-
+    padding: 14px;
+    font-size: 22px;
     border: none;
     border-radius: 10px;
     outline: none;
 }
 
-/* RESPONSIVE SAFETY (IMPORTANT) */
-@media (max-width: 1100px){
-    .chemie-page .exercise-container{
-        flex-direction: column;
-    }
+/* BUTTON */
+.chemie-page .check-btn{
+    margin-top: auto;
+    padding: 15px;
+    font-size: 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #00b618;
+    color: white;
+    transition: 0.2s;
+}
+
+.chemie-page .check-btn:hover{
+    transform: scale(1.03);
+    background: #009714;
 }
