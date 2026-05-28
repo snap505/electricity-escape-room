@@ -274,7 +274,7 @@ h1 {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     box-shadow: 0 0 40px rgba(0,0,0,0.7);
     overflow: hidden;
 }
@@ -285,7 +285,7 @@ h1 {
     color: black;
 }
 
-/* HOLDER FOR ALL EXERCISES */
+/* HOLDER */
 .chemie-page .exercise-container{
     flex: 1;
     display: flex;
@@ -293,54 +293,68 @@ h1 {
     align-items: center;
 }
 
-/* each box must NOT stretch full width */
-/* EACH EXERCISE CARD */
+/* CARD */
 .chemie-page .exercise-card{
     width: 100%;
     max-width: 700px;
-
     background: #293772;
     border-radius: 20px;
     padding: 25px;
-
     color: white;
 
-    display: none;           /* hidden by default */
+    display: none; /* hidden by default */
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-/* ONLY ACTIVE ONE SHOWS */
+/* ONLY ACTIVE ONE */
 .chemie-page .exercise-card.active{
     display: flex;
 }
 
-/* TITLES */
-.chemie-page .exercise-box h2{
+/* TITLE */
+.chemie-page .exercise-card h2{
     text-align: center;
-    font-size: 36px;
+    font-size: 32px;
 }
 
-/* TEXT */
-.chemie-page .exercise-box p{
-    font-size: 24px;
+/* SECTIONS */
+.chemie-page .section{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* INPUT */
-.chemie-page input{
-    width: 100%;
-    padding: 14px;
+.chemie-page .section h3{
     font-size: 22px;
+}
+
+.chemie-page .section p{
+    font-size: 20px;
+}
+
+/* INPUT ROW LOOK: [123] mol */
+.chemie-page .section:last-child{
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* SMALL INPUT BOX */
+.chemie-page input{
+    width: 120px;
+    padding: 8px;
+    font-size: 18px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     outline: none;
 }
 
-/* BUTTON */
+/* BUTTON (future) */
 .chemie-page .check-btn{
     margin-top: auto;
     padding: 15px;
-    font-size: 22px;
+    font-size: 20px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
