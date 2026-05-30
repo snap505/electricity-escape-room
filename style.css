@@ -417,3 +417,21 @@ h1 {
     padding: 10px;
     font-size: 18px;
 }
+
+.bio-image.hidden {
+    display: none;
+}
+
+.reveal-btn {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #00b618;
+    color: white;
+    cursor: pointer;
+}
+
+.reveal-btn:hover {
+    background: #009714;
+}
