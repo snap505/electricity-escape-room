@@ -367,3 +367,53 @@ h1 {
     transform: scale(1.03);
     background: #009714;
 }
+
+.biologie-page .question-card{
+    width: 100%;
+    max-width: 900px;
+
+    background: #293772;
+    border-radius: 20px;
+    padding: 25px;
+
+    color: white;
+
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.biologie-page .question-card.active{
+    display: flex;
+}
+
+.biologie-page .question-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.biologie-page .answer-row{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.biologie-page input{
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.biologie-page .bio-image{
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.biologie-page select{
+    width: 250px;
+    padding: 10px;
+    font-size: 18px;
+}
