@@ -292,3 +292,15 @@ function goToNextBiology(currentCard) {
   }
 
 }
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("reveal-btn")) {
+        const card = e.target.closest(".question-card");
+        const img = card.querySelector(".bio-image");
+
+        if (img) {
+            img.classList.remove("hidden");
+            e.target.style.display = "none";
+        }
+    }
+});
