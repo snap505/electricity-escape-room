@@ -12,6 +12,8 @@ document.querySelectorAll(".color-btn").forEach(btn => {
 function resizePhysicsCanvas() {
   const wrapper = document.querySelector(".exercise-wrapper");
 
+  if (!wrapper) return;
+
   const canvasW = 1600;
   const canvasH = 700;
 
@@ -201,4 +203,92 @@ function goToNextChemistry(currentCard) {
   } else {
     alert("Alle oefeningen voltooid!");
   }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (document.querySelector(".biologie-page")) {
+    createBiologyButton();
+  }
+
+});
+
+function createBiologyButton() {
+
+  const btn = document.createElement("button");
+
+  btn.innerText = "Verbeter";
+  btn.classList.add("check-btn");
+
+  document.querySelector(".biologie-page .screen").appendChild(btn);
+
+  btn.addEventListener("click", checkBiology);
+
+}
+
+function checkBiology() {
+
+  const activeCard =
+    document.querySelector(".biologie-page .question-card.active");
+
+  if (!activeCard) return;
+
+  const select = activeCard.querySelector("select");
+
+  const correct =
+    activeCard.dataset.answer.toLowerCase().trim();
+
+  const answer =
+    select.value.toLowerCase().trim();
+
+  if (answer === correct) {
+
+    activeCard.style.border = "3px solid #39ff14";
+    activeCard.style.boxShadow = "0 0 20px #39ff14";
+
+    setTimeout(() => {
+      goToNextBiology(activeCard);
+    }, 500);
+
+  } else {
+
+    select.style.border = "2px solid red";
+
+    setTimeout(() => {
+      select.style.border = "";
+    }, 500);
+
+  }
+
+}
+
+function goToNextBiology(currentCard) {
+
+  const cards = Array.from(
+    document.querySelectorAll(".biologie-page .question-card")
+  );
+
+  const index = cards.indexOf(currentCard);
+
+  currentCard.classList.remove("active");
+
+  const next = cards[index + 1];
+
+  if (next) {
+
+    next.classList.add("active");
+
+  } else {
+
+    alert("Biologie voltooid!");
+
+    const code =
+      document.getElementById("biology-code");
+
+    if (code) {
+      alert("Code: " + code.textContent.trim());
+    }
+
+  }
+
 }
